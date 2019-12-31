@@ -26,7 +26,7 @@ export const Board = () =>{
         
         }
 
-        setLists([newLi,...lists])
+        setLists([...lists,newLi])
         setListId(listId + 1);
 
     }
@@ -40,13 +40,15 @@ export const Board = () =>{
     return(
 
         <StyledBoard>
-            <div>
-                <input onChange={handleChange}></input>
-                <button onClick={addList}>Add List</button>
-            </div>
            
+            <input onChange={handleChange}></input>
+            <button onClick={addList}>Add List</button>
+        
+           
+            <div className='b-container'>
+                {lists.map(li => <List title = {li.title} key={li.id} items={li.items}></List>)}
+            </div>
             
-            {lists.map(li => <List title = {li.title} key={li.id} items={li.items}></List>)}
         </StyledBoard>
     )
 
@@ -63,9 +65,14 @@ const StyledBoard = styled.div `
     height:600px;
     width:1000px;
     display:flex;
-    overflow-x:scroll;
+    flex-direction:column;
     border:1px solid black;
     margin: 100px auto;
+    .b-container{
+        height:100%;
+        display:flex;
+        overflow-x:scroll;
+    }
 
 
 

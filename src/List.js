@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-
+import {Item} from './Item';
 
 
 //list will be able to add new items
@@ -27,7 +27,8 @@ export const List = (props) => {
     const handleChange = e => {
         let n = {
             id:todoId,
-            text:e.target.value
+            text:e.target.value,
+            status:false
         }
      
         setInputState(n);
@@ -40,7 +41,7 @@ export const List = (props) => {
             <h1>{props.title}</h1>
             <input onChange={handleChange} name='text'></input>
             <button onClick={addTodo}>Add Todo</button>
-            {todos.map(item => <li key={item.id}>{item.text}</li>)}
+            {todos.map(item => <Item text={item.text} key={item.id}></Item>)}
         </StyledList>
 
 
@@ -54,9 +55,13 @@ export const List = (props) => {
 
 const StyledList = styled.ul `
 
-    width:200px;
+    min-width:200px;
     border:1px solid black;
-
+    display:flex;
+    flex-direction:column;
+    margin:0px;
+    padding:0px;
+    
 
 
 
