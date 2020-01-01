@@ -40,7 +40,7 @@ export const Board = () =>{
     return(
 
         <StyledBoard>
-           
+            {/*inline elements will push block style elements down outside the boundaries of parent unless flexed */}
             <input onChange={handleChange}></input>
             <button onClick={addList}>Add List</button>
         

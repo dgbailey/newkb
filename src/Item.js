@@ -7,15 +7,16 @@ export const Item = (props) => {
 
     const [complete,setComplete]  = useState(false);
     //state for status
-
+    const {filter} = props;
     const setStatus = () => {
 
-
         setComplete(!complete);
+        
+
     }
     return (
 
-        <StyledListItem onClick={setStatus} className={complete ? 'complete':''}>{props.text}</StyledListItem>
+        <StyledListItem onClick={() =>{setStatus();filter()}} className={complete ? 'complete':''}>{props.text}</StyledListItem>
     )
 
 
