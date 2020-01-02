@@ -5,13 +5,15 @@ import styled from 'styled-components';
 
 export const Item = (props) => {
 
-    const [complete,setComplete]  = useState(false);
+    const [complete,setUiStatus]  = useState(false);
     //state for status
-    const {filter} = props;
+    const {filter,changeObjectStatus} = props;
+
     const setStatus = () => {
 
-        setComplete(!complete);
-        
+        changeObjectStatus();
+        setUiStatus(!complete);
+
 
     }
     return (

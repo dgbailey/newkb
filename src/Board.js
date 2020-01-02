@@ -8,7 +8,7 @@ import {List} from './List';
 const initialBoard = [
 
     {id:0,
-    items:[{id:0,text:'Sample text'}],
+    items:[{id:0,text:'Sample text',status:false}],
     title:'Title'},
 ]
 
