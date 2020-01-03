@@ -38,6 +38,6 @@ const StyledListItem = styled.li `
     &.complete{
         background:green;
     }
-
+    transition:.5s; 
 
 `
